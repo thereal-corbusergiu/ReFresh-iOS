@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DrinkDetail: View {
     
+    @Environment(\.presentationMode) var presentationMode
     var drink: Drink
     var ingredients: Int{
         return drink.ingredients.count
@@ -42,11 +43,14 @@ struct DrinkDetail: View {
                 } //vstack end
                 .frame(maxWidth: .infinity,alignment: .leading)
            
-                VStack(alignment: .leading){
+                HStack{
                     Text("\(drink.price.clean) lei")
-                        .font(.title)
+                        .font(.title) .fontWeight(.bold)
                         .padding(.bottom, 3)
-                        
+                    Text("/ 330 ml")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                    Spacer()
                     Label(drink.priceInfo, systemImage: "info.circle")
                         .foregroundColor(.yellow)
                         .shadow(radius: 9)
@@ -182,6 +186,12 @@ struct DrinkDetail: View {
             .edgesIgnoringSafeArea(.bottom)
             .padding(.top, 90)
             .frame(height: UIScreen.main.bounds.width - 10)
+            .navigationBarItems(trailing: Button(action:{
+                self.presentationMode.wrappedValue.dismiss()
+            }){
+                Image(systemName: "xmark.circle")
+                    .font(.system(size: 25))
+            })
         
         } //scroll end
         .edgesIgnoringSafeArea(.top)

@@ -50,7 +50,7 @@ struct Settings: View {
                         
                         NavigationLink(
                             destination: ContactUs()){
-                        Button(action:{createMenu()}){
+                        Button(action:{createMenu() }){
                             SettingsCell(title: "Distribuie aplicatia", imgName: "square.and.arrow.up", clr: .red)
                                 .foregroundColor(colorScheme == .dark ? .white : .black)}
                         }
