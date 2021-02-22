@@ -38,6 +38,7 @@ struct DrinkDetail: View {
                 VStack(alignment: .leading){
                     Text(drink.name)
                         .font(.title)
+                        .foregroundColor(.black)
                         .fontWeight(.bold)
                         .padding(.top, 1)
                 } //vstack end
@@ -46,6 +47,7 @@ struct DrinkDetail: View {
                 HStack{
                     Text("\(drink.price.clean) lei")
                         .font(.title) .fontWeight(.bold)
+                        .foregroundColor(.black)
                         .padding(.bottom, 3)
                     Text("/ 330 ml")
                         .font(.subheadline)
@@ -64,7 +66,7 @@ struct DrinkDetail: View {
                 Divider()
                 
                 VStack(alignment: .leading){
-                    Text(drink.description) .foregroundColor(.primary) .font(.body) .lineLimit(4) .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/) .padding(.top, -5)
+                    Text(drink.description) .foregroundColor(.black) .font(.body) .lineLimit(4) .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/) .padding(.top, -5)
                     
                 } //3rd zstack end
                 .padding(.top)
