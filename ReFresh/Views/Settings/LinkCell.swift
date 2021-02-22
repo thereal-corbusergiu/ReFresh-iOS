@@ -20,20 +20,19 @@ struct LinkCell: View {
             Text(text)
                 .font(.headline)
             Spacer()
-            Text(text1)
-            /*
-            Button(action:{
-                guard let url = URL(string: self.link), UIApplication.shared.canOpenURL(url) else{ return }
-                UIApplication.shared.open(url as URL)
+            Button(action: {guard let url = URL(string: self.link), UIApplication.shared.canOpenURL(url) else{ return }
+                    UIApplication.shared.open(url as URL)}, label: {
+                Text(text1)
+                    .foregroundColor(.primary)
             })
- */
+    
         }
     }
 }
 
 struct LinkCell_Previews: PreviewProvider {
     static var previews: some View {
-        LinkCell(icon: "globe", text: "Website", link: "https://google.com", text1: "")
+        LinkCell(icon: "ig", text: "Website", link: "https://google.com", text1: "")
             .previewLayout(.fixed(width: 375, height: 60))
             .padding()
     }

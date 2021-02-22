@@ -16,7 +16,6 @@ struct ContactUs: View {
         
         NavigationView{
             ScrollView{
-                
                 Image("loc")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -37,7 +36,7 @@ struct ContactUs: View {
                    
                 } //info
                 .padding(.leading, 15)
-                .padding(.bottom, 10)
+                .padding(.bottom, -5)
                 .frame(alignment: .leading)
                 
                 VStack(alignment: .center,spacing: 0){
@@ -45,20 +44,18 @@ struct ContactUs: View {
                         Section(header: Text("Program & contact")){
                            Schedule(icon: "calendar", label1: "Luni - Vineri", label2: "8:00 - 20:00")
                             Schedule(icon: "calendar", label1: "Sambata - Duminica", label2: "10:00 - 15:00")
-                            LinkCell(icon: "bag", text: "Instagram", link: "https://google.com", text1: "@refresh")
-                            LinkCell(icon: "bag", text: "Telefon", link: "", text1: "0773792483")
-                            LinkCell(icon: "globe", text: "Website", link: "https://google.com", text1: "www.refresh-drinks.ro")
-                            
+                            LinkCell(icon: "ig", text: "Instagram", link: "https://google.com", text1: "@refresh")
+                            LinkCell(icon: "phone", text: "Telefon", link: "", text1: "0773792483")
+                            LinkCell(icon: "globe", text: "Website", link: "https://google.com", text1: "refresh-drinks.ro")
                         }
-                       
                     }
-                    .frame(width: screenWidth, height: 270)
+                    .frame(width: screenWidth, height: 260)
                     
                 } // contact info
                 
                 VStack(alignment: .center, spacing: 0){
                     MapView(coordinate: CLLocationCoordinate2D(latitude:46.775439, longitude: 23.587062))
-                        .frame(width: 390, height: 200, alignment: .center)
+                        .frame(width: 375, height: 200, alignment: .center)
                         .cornerRadius(20)
                 } // mapview
                 

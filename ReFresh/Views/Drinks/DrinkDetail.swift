@@ -10,11 +10,12 @@ import SwiftUI
 struct DrinkDetail: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @State private var showingAlert = false
+    
     var drink: Drink
     var ingredients: Int{
         return drink.ingredients.count
     }
-    @State private var showingAlert = false
     var type: String{
         if drink.category.rawValue == "Sucuri"{
             return "Sucul contine"
@@ -27,14 +28,11 @@ struct DrinkDetail: View {
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: true){
-            
             Image(drink.imageName)
                 .resizable()
                 // .aspectRatio(contentMode: .fit)
                 .frame(height: UIScreen.main.bounds.height / 2.8)
-            
             VStack{
-                
                 VStack(alignment: .leading){
                     Text(drink.name)
                         .font(.title)
@@ -43,13 +41,14 @@ struct DrinkDetail: View {
                         .padding(.top, 1)
                 } //vstack end
                 .frame(maxWidth: .infinity,alignment: .leading)
-           
+                
                 HStack{
                     Text("\(drink.price.clean) lei")
                         .font(.title) .fontWeight(.bold)
                         .foregroundColor(.black)
                         .padding(.bottom, 3)
                     Text("/ 330 ml")
+                        .foregroundColor(.black)
                         .font(.subheadline)
                         .fontWeight(.bold)
                     Spacer()
@@ -75,7 +74,7 @@ struct DrinkDetail: View {
                 Label(type, systemImage: "tag")
                     .foregroundColor(.yellow) .shadow(radius: 9)
                     .padding(.top, 20) .padding(.bottom, 5)
-               
+                
                 HStack(spacing: 20){
                     
                     if ingredients == 2{
@@ -194,7 +193,6 @@ struct DrinkDetail: View {
                 Image(systemName: "xmark.circle")
                     .font(.system(size: 25))
             })
-        
         } //scroll end
         .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(false)
@@ -214,9 +212,12 @@ struct OrderButton: View{
     
     @Binding var showAlert: Bool
     @ObservedObject var basketListener = BasketListener()
+    @Environment(\.presentationMode) var presentationMode
+    
     var drink: Drink
     var body: some View{
         Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
             self.showAlert.toggle()
             self.addItemToBasket()
         }){Text("Adauga in cos")} .frame(width: 200, height: 50) .foregroundColor(.white) .font(.headline) .background(Color.orange) .cornerRadius(20.0)
