@@ -16,6 +16,7 @@ class OnlineOrder{
     var toGo: Bool!
     var amount: Double! = 0
     var isCompleted: Bool!
+    var isTaken: Bool!
     
     func saveOnlineOrderToFirestore(){
         FirebaseReference(.Order).document(self.id).setData(orderDictionaryFrom(self))
@@ -27,5 +28,5 @@ func orderDictionaryFrom(_ order: OnlineOrder) -> [String : Any ]{
     for drink in order.orderItems{
         allDrinkName.append(drink.name)
     }
-    return NSDictionary(objects: [order.id, order.customerFullName, order.customerPhone, allDrinkName, order.amount, order.orderDate, order.toGo, order.isCompleted], forKeys: [kID as NSCopying, kFULLNAME as NSCopying,kPHONENUMBER as NSCopying, kDRINKNAME as NSCopying,kAMOUNT as NSCopying, kORDERDATE as NSCopying, kORDEROPTION as NSCopying, kORDERISCOMPLETED as NSCopying]) as! [String : Any]
+    return NSDictionary(objects: [order.id, order.customerFullName, order.customerPhone, allDrinkName, order.amount, order.orderDate, order.toGo, order.isCompleted, order.isTaken], forKeys: [kID as NSCopying, kFULLNAME as NSCopying,kPHONENUMBER as NSCopying, kDRINKNAME as NSCopying,kAMOUNT as NSCopying, kORDERDATE as NSCopying, kORDEROPTION as NSCopying, kORDERISCOMPLETED as NSCopying, kORDERISTAKEN as NSCopying]) as! [String : Any]
 }

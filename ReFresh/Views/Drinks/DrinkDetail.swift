@@ -9,7 +9,6 @@ import SwiftUI
 
 struct DrinkDetail: View {
     
-    @Environment(\.presentationMode) var presentationMode
     @State private var showingAlert = false
     
     var drink: Drink
@@ -187,12 +186,6 @@ struct DrinkDetail: View {
             .edgesIgnoringSafeArea(.bottom)
             .padding(.top, 90)
             .frame(height: UIScreen.main.bounds.width - 10)
-            .navigationBarItems(trailing: Button(action:{
-                self.presentationMode.wrappedValue.dismiss()
-            }){
-                Image(systemName: "xmark.circle")
-                    .font(.system(size: 25))
-            })
         } //scroll end
         .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(false)

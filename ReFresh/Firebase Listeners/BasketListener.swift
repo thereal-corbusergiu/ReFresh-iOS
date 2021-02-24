@@ -50,7 +50,7 @@ func getDrinksFromFirestore(withIds: [String], completion: @escaping (_ drinkArr
             guard let snapshot = snapshot else {return}
             if !snapshot.isEmpty{
                 let drinkData = snapshot.documents.first!
-                drinkArray.append(Drink(id: drinkData[kID] as? String ?? UUID().uuidString, name: drinkData[kNAME] as? String ?? "unknown", priceInfo: drinkData[kPRICEINFO] as? String ?? "0 lei / l", imageName: drinkData[kIMAGENAME] as? String ?? "unknown", category: Category(rawValue: drinkData[kCATEGORY] as? String ?? "sucuri") ?? .Sucuri, description: drinkData[kDESCRIPTION] as? String ?? "Fara descriere", ingredients: drinkData[kINGREDIENTS] as? [String] ?? [""], price: drinkData[kPRICE] as? Double ?? 0.0))
+                drinkArray.append(Drink(id: drinkData[kID] as? String ?? UUID().uuidString, name: drinkData[kNAME] as? String ?? "unknown", priceInfo: drinkData[kPRICEINFO] as? String ?? "0 lei / l", imageName: drinkData[kIMAGENAME] as? String ?? "unknown", category: Category(rawValue: drinkData[kCATEGORY] as? String ?? "sucuri") ?? .Suc, description: drinkData[kDESCRIPTION] as? String ?? "Fara descriere", ingredients: drinkData[kINGREDIENTS] as? [String] ?? [""], price: drinkData[kPRICE] as? Double ?? 0.0))
                 count += 1
             } else{
                 print("have no drink")

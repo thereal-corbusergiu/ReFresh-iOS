@@ -24,7 +24,7 @@ struct Drinks: View {
                     .padding(.top, -2)
                     .padding(.bottom, -5)
             }
-            .navigationBarTitle(Text("Sucurile ReFresh"))
+            .navigationBarTitle(Text("Produsele ReFresh"))
         }
     }
 }

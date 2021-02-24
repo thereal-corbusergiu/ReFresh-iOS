@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 
 enum Category: String, CaseIterable, Codable, Hashable{
-    case Sucuri
+    case Suc
+    //case Shake
     case Smoothie
     case MultiSmoothie
 }
@@ -39,16 +40,16 @@ func createMenu(){
 
 let DrinkMenu = [
     
-    Drink(id: UUID().uuidString, name: "Suc de mere",priceInfo: "10 lei/L" ,imageName: "oj",category: Category.Sucuri, description: "Suc proaspat obtinut din mere, portocale, caise. Foarte bun pentru digestie si un stil de viata sanatos. Recomandam cu incredere!",ingredients: ["90%", "Mere","10%", "Apa"], price: 4),
-    Drink(id: UUID().uuidString, name: "Suc de mere & portocale & morcovi", priceInfo: "10 lei/L" ,imageName: "oj",category: Category.Sucuri, description: "Suc proaspat obtinut din mere, portocale, caise. Foarte bun pentru digestie si un stil de viata sanatos. Recomandam cu incredere!",ingredients: ["70%"," Mere","20%", "Portocale", "10%","Morcovi"], price: 6),
+    Drink(id: UUID().uuidString, name: "Suc de mere",priceInfo: "10 lei/L" ,imageName: "oj",category: Category.Suc, description: "Suc proaspat obtinut din mere, portocale, caise. Foarte bun pentru digestie si un stil de viata sanatos. Recomandam cu incredere!",ingredients: ["90%", "Mere","10%", "Apa"], price: 4),
+    Drink(id: UUID().uuidString, name: "Suc de mere & portocale & morcovi", priceInfo: "10 lei/L" ,imageName: "oj",category: Category.Suc, description: "Suc proaspat obtinut din mere, portocale, caise. Foarte bun pentru digestie si un stil de viata sanatos. Recomandam cu incredere!",ingredients: ["70%"," Mere","20%", "Portocale", "10%","Morcovi"], price: 6),
     
     //simple juice
     Drink(id: UUID().uuidString, name: "Fresh de portocale", priceInfo: "8 lei/L"
-          , imageName: "oj",category: Category.Sucuri, description: "Suc proaspat obtinut din mere, portocale, caise. Foarte bun pentru digestie si un stil de viata sanatos. Recomandam cu incredere!",ingredients: ["100%", "Portocale"],price: 5),
+          , imageName: "oj",category: Category.Suc, description: "Suc proaspat obtinut din mere, portocale, caise. Foarte bun pentru digestie si un stil de viata sanatos. Recomandam cu incredere!",ingredients: ["100%", "Portocale"],price: 5),
     
 
     //combined juice
-    Drink(id: UUID().uuidString, name: "Suc de mere & portocale", priceInfo: "10 lei/L" ,imageName: "oj",category: Category.Sucuri, description: "Suc proaspat obtinut din mere, portocale, caise. Foarte bun pentru digestie si un stil de viata sanatos. Recomandam cu incredere!",ingredients: ["35%", "Mere","65%","Portocale"], price: 6),
+    Drink(id: UUID().uuidString, name: "Suc de mere & portocale", priceInfo: "10 lei/L" ,imageName: "oj",category: Category.Suc, description: "Suc proaspat obtinut din mere, portocale, caise. Foarte bun pentru digestie si un stil de viata sanatos. Recomandam cu incredere!",ingredients: ["35%", "Mere","65%","Portocale"], price: 6),
     
     
     //simple_smoothie

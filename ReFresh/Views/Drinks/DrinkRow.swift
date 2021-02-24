@@ -26,7 +26,7 @@ struct DrinkRow: View {
                             destination: DrinkDetail(drink: drink)){
                             DrinkItem(drink: drink)
                                 .frame(width: 300)
-                                .padding(.trailing, 30)
+                                .padding(.trailing, 20)
                         }
                        
                     }

@@ -40,12 +40,12 @@ struct Basket: View {
                         drink in HStack{
                             Image(drink.imageName)
                                 .resizable()
-                                .frame(width: 70, height: 50)
+                                .frame(width: 65, height: 45)
                                 .cornerRadius(10)
                             VStack(alignment: .leading){
                                 Text(drink.name)
-                                    .padding(.bottom, -2)
-                                    .font(.title3)
+                                    //.padding(.bottom, -2)
+                                    .font(.headline)
                                 Text("\(drink.price.clean) lei / pahar") .font(.footnote)
                             } .padding(.leading, 10)
                         } //hstack end
@@ -64,15 +64,19 @@ struct Basket: View {
                     //.foregroundColor(.yellow)
                     .shadow(radius: 9)
                     .font(.footnote)
-                    
+               
                 Section(header: Text("Total: \(totalPrice.clean) lei") .font(.title2) .padding(.leading, 10) .padding(.bottom, 10)){
                         Button(action:{
                                 self.showOrderAlert.toggle()
                                 self.createOrder()
                                 self.emptyBasket()
-                            }) {Text("Plaseaza comanda")}
+                            }) {
+//                           !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                Text("Plaseaza comanda")
+                        }
                     }.disabled(self.basketListener.orderBasket?.items.isEmpty ?? true)
             }//form end
+            
             .navigationBarTitle(Text("Comanda ta")) .listStyle(GroupedListStyle())
         } .alert(isPresented: $showOrderAlert){ Alert(title: Text("Comanda a fost plasata"), message: Text("Va multumim!"))}
     } //body end

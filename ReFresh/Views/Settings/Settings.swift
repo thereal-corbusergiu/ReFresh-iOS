@@ -32,7 +32,6 @@ struct Settings: View {
                        
                         NavigationLink(
                             destination: CustomOrders()){
-                        
                         Button(action:{}){
                             SettingsCell(title: "Comenzi personalizate", imgName: "bag", clr: .red)
                                 .foregroundColor(colorScheme == .dark ? .white : .black) }

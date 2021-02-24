@@ -24,7 +24,8 @@ public let kDRINKNAME = "Produse"
 public let kORDEROPTION = "toGo"
 public let kAMOUNT = "Total"
 public let kORDERDATE = "Ridicare comanda"
-public let kORDERISCOMPLETED = "Status comanda"
+public let kORDERISCOMPLETED = "Comanda finalizata"
+public let kORDERISTAKEN = "Comanda preluata"
 
 //FUser
 public let kFULLNAME = "Nume client"
