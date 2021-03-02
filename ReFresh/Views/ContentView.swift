@@ -22,7 +22,7 @@ struct ContentView: View {
                         Text("Produse")}
                     Search() .tabItem { Image(systemName: "magnifyingglass")
                         Text("Cauta")}
-                    Basket() .tabItem { Image(systemName: "bag.badge.plus")
+                    Basket() .tabItem { Image(systemName: "bag")
                         Text("Comanda") }
                     Settings() .tabItem { Image(systemName: "gear")
                         Text("Setari")}

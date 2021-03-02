@@ -193,6 +193,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		ECACC72F25E7BD7700AC73AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ECFF48CC25C9475200432707 /* SettingsCell.swift */,
+				EC4828FA25E3ED200091A668 /* Schedule.swift */,
+				EC4828FD25E3EFB00091A668 /* LinkCell.swift */,
+				EC2AA9BD25C7359700F85C9B /* MapView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		ECBA416025BEA92B00979751 /* Firebase Listeners */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,12 +238,9 @@
 		ECFF48C025C945B600432707 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				ECACC72F25E7BD7700AC73AB /* Helpers */,
 				ECAB824225BDF78800AAB00F /* Settings.swift */,
-				ECFF48CC25C9475200432707 /* SettingsCell.swift */,
-				EC4828FA25E3ED200091A668 /* Schedule.swift */,
-				EC4828FD25E3EFB00091A668 /* LinkCell.swift */,
 				EC0E6F4725D1830800B92376 /* Account.swift */,
-				EC2AA9BD25C7359700F85C9B /* MapView.swift */,
 				ECFF48C525C9466B00432707 /* ContactUs.swift */,
 				EC11406525CAA31900274ADE /* CustomOrders.swift */,
 			);

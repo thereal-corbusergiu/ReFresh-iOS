@@ -8,15 +8,12 @@
 import SwiftUI
 
 struct Account: View {
+    
     var body: some View {
-        
-        Button(action: {
-            User.logOutUser { (error) in
-                print("error logging out user", error?.localizedDescription)
-            }
-        }, label: {
-            Text("Deconectare")
-        })
+        ScrollView(.vertical, showsIndicators: false){
+            Text("Salut")
+        }
+        .navigationBarTitle(Text("Salut, \(User.currentUser()!.fullName)"))
 
     }
 }

@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import UIKit
+import MessageUI
 
 struct Settings: View {
     
     @Environment(\.colorScheme) var colorScheme
+   
     
     var body: some View {
         NavigationView{
@@ -58,8 +61,24 @@ struct Settings: View {
                             destination: ContactUs()){
                         Button(action:{}){
                             SettingsCell(title: "Raporteaza o problema", imgName: "exclamationmark.bubble", clr: .red)
-                                .foregroundColor(colorScheme == .dark ? .white : .black)}
+                                .foregroundColor(colorScheme == .dark ? .white : .black)}}
+                        HStack{
+                            Image(systemName: "xmark.circle")
+                                .foregroundColor(.red)
+                                .padding(.trailing, 12)
+                            Button(action: {
+                                User.logOutUser { (error) in
+                                    print("error logging out user", error?.localizedDescription)
+                                }
+                            }, label: {
+                                Text("Deconectare")
+                                    .foregroundColor(.red)
+                                    .font(.headline)
+                                    .bold()
+                            })
                         }
+                      
+                        
                     }
                     .padding(.all, 9)
                 } // form end

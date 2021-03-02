@@ -52,7 +52,9 @@ struct Basket: View {
                     }.onDelete(perform: { (indexSet) in
                     self.deleteItems(at: indexSet)
                 })
+
                 }
+
                 HStack{
                     Text("Data ridicare")
                     DatePicker("",selection: $orderDate, in: minDate...maxDate)
@@ -65,14 +67,23 @@ struct Basket: View {
                     .shadow(radius: 9)
                     .font(.footnote)
                
-                Section(header: Text("Total: \(totalPrice.clean) lei") .font(.title2) .padding(.leading, 10) .padding(.bottom, 10)){
+                Section(header: HStack{
+                            Spacer()
+                            Text("Total: \(totalPrice.clean) lei") .font(.title2) .padding(.leading, 10) .padding(.bottom, 10)
+                    Spacer()
+                }){
                         Button(action:{
                                 self.showOrderAlert.toggle()
                                 self.createOrder()
                                 self.emptyBasket()
                             }) {
-//                           !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                            HStack{
+                                Spacer()
                                 Text("Plaseaza comanda")
+                                    .font(.title2)
+                                Spacer()
+                            }
+                                
                         }
                     }.disabled(self.basketListener.orderBasket?.items.isEmpty ?? true)
             }//form end
